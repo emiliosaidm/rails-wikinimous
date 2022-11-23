@@ -1,0 +1,14 @@
+<div class="container border mt-5 p-3">
+<h1>Edit Article</h1>
+<%= form_with model: @article, class: "form-group" do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.submit class: "btn btn-primary mt-4" %>
+<% end %>
+
+  <a class = "btn btn-primary mt-4" data-turbo-method="delete" data-turbo-confirm="Are you sure?" href="/articles/<%=@article.id%>">
+    Delete article 🗑️
+  </a>
+</div>
